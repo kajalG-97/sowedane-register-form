@@ -3,7 +3,7 @@ import { aLOGIN_ERROR, aLOGIN_LODING, aLOGIN_SUCCESS, LOGOUT } from "./adminActi
 const ADMINDATA = JSON.parse(sessionStorage.getItem("adminAuthData"));
 
 const initialState = {
-    isAuthenticated: sessionStorage.getItem("adminAuthenticated")|| false,
+    isAAuthenticated: sessionStorage.getItem("adminAuthenticated")|| false,
     token: "",
     admin: ADMINDATA || {} ,
     loding: false,
@@ -15,7 +15,7 @@ export const AdminReducer = (store = initialState, { type, payload }) => {
 
         case aLOGIN_ERROR: return { ...store, loding: false, error: true };
 
-        case aLOGIN_SUCCESS: return { loding: false, error: false, isAuthenticated: true, token: payload.token, admin: payload };
+        case aLOGIN_SUCCESS: return { loding: false, error: false, isAAuthenticated: true, token: payload.token, admin: payload };
 
         case LOGOUT: return { ...initialState }
 

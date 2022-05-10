@@ -47,7 +47,8 @@ export const HomeNav = () => {
 
     const sample = useSelector((store) => store.admin);
     // console.log('sample', sample);
-
+    const { isAAuthenticated } = useSelector((store) => store.admin);
+    console.log('isAAuthenticated', isAAuthenticated);
 
     // if(user.admin && user.admin)
 
@@ -82,9 +83,8 @@ export const HomeNav = () => {
                             }} sx={{ m: 1, color: "#f2f2ff" }} color="inherit">Logout</Button>
                         }
 
-                        {/* <Link to={!isAuthenticated?"/SignIn":"/"}>
-                            <Button  onClick={() => dispatch(logoutUser())} sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit">{!isAuthenticated? "Login":"Logout"}</Button></Link>
-                        </Link> : <Link underline="none" to={"/"}><Button  sx={{ m: 1, color: "#f2f2ff" }} color="inherit">Logout</Button></Link>} */}
+                       
+                            {isAAuthenticated ?<Link underline="none" to={"/"}><Button onClick={() => dispatch(logoutUser())}  sx={{ m: 1, color: "#f2f2ff" }} color="inherit">Logout</Button></Link>:""}
                     </Toolbar>
                 </AppBar>
             </ThemeProvider>
