@@ -18,6 +18,7 @@ export const AdminReducer = (store = initialState, { type, payload }) => {
         case aLOGIN_SUCCESS: return { loding: false, error: false, isAAuthenticated: true, token: payload.token, admin: payload };
 
         case LOGOUT: return { ...initialState }
+        // localStorage. removeItem('myData')
 
         default: return store;
     }
