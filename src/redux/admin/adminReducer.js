@@ -3,7 +3,7 @@ import { aLOGIN_ERROR, aLOGIN_LODING, aLOGIN_SUCCESS, LOGOUT } from "./adminActi
 const initialState = {
     isAuthenticated: false,
     token: "",
-    admin: {},
+    admin: sessionStorage.getItem("adminAuthData") || {} ,
     loding: false,
     error: false
 }

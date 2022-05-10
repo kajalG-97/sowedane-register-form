@@ -140,9 +140,9 @@ export const SignIn = () => {
                         variant="contained"
                         sx={{ backgroundColor: "#4285f4", color: "white " }}
                         startIcon={<GoogleIcon />}
-                        onClick={() => {
-                            window.location.href = "https://user-information-project.herokuapp.com/auth/google"
-                        }}
+                        // onClick={() => {
+                        //     window.location.href = "https://user-information-project.herokuapp.com/auth/google"
+                        // }}
                     >
                         Continue With Google
                     </Button>

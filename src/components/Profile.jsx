@@ -1,28 +1,13 @@
-import Paper from "@mui/material/Paper";
-
-import Radio from '@mui/material/Radio';
-
-import FormControlLabel from '@mui/material/FormControlLabel';
-
-import RadioGroup from '@mui/material/RadioGroup';
-
 import Box from "@mui/material/Box";
-
-import { Checkbox, IconButton, Typography } from "@mui/material";
 
 import TextField from "@mui/material/TextField";
 
 import Button from "@mui/material/Button";
 
-import GoogleIcon from "@mui/icons-material/Google";
 
-import FacebookIcon from "@mui/icons-material/Facebook";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
-
-import FormLabel from '@mui/material/FormLabel';
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -32,17 +17,6 @@ import { HomeNav } from "./HomeNav";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { nanoid } from "nanoid";
-
-import InputLabel from "@mui/material/InputLabel";
-
-import MenuItem from "@mui/material/MenuItem";
-
-import FormControl from "@mui/material/FormControl";
-
-import Select from "@mui/material/Select";
-
-import { registerSuccessData } from "../redux/register/registerAction";
 
 import { getOneUserDetail, userError } from '../redux/user/userAction'
 

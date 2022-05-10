@@ -27,6 +27,10 @@ export const adminloginSuccessData = (data, toast, navigate) => (dispatch) => {
 
             dispatch(adminStatus());
 
+            sessionStorage.setItem("adminAuthData", data);
+            sessionStorage.setItem("adminStatus", true);
+    
+
             // console.log('data', data);
 
             toast.success("Logged in Successfully", {

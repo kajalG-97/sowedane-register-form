@@ -1,7 +1,7 @@
 import { REGISTER_ERROR, REGISTER_LODING, REGISTER_SUCCESS } from "./registerAction";
 
 const initialState = {
-    users:{},
+    users:sessionStorage.getItem("userRegData") || {},
     loding: false,
     error: false
 }

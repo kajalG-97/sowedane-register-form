@@ -145,50 +145,7 @@ export const SignUp = () => {
 
   const cityOption = ["Pune", "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Amritser", "Chennai", "Kolkata"];
 
-  const options = [
-    {
-      value: "Pune",
-      label: "Pune",
-      id: nanoid(),
-    },
-    {
-      value: "Mumbai",
-      label: "Mumbai",
-      id: nanoid(),
-    },
-    {
-      value: "Delhi",
-      label: "Delhi",
-      id: nanoid(),
-    },
-    {
-      value: "Bangalore",
-      label: "Bangalore",
-      id: nanoid(),
-    },
-    {
-      value: "Hyderabad",
-      label: "Hyderabad",
-      id: nanoid(),
-    },
-    {
-      value: "Amritser",
-      label: "Amritser",
-      id: nanoid(),
-    },
-    {
-      value: "Chennai",
-      label: "Chennai",
-      id: nanoid(),
-    },
-    {
-      value: "Kolkata",
-      label: "Kolkata",
-      id: nanoid(),
-    },
-  ];
-
-
+  
 
   // return loding ? <img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" /> : error ? <img src="https://cdn.dribbble.com/users/2469324/screenshots/6538803/comp_3.gif" alt="Oops something went wrong" /> : (
   return (
@@ -375,9 +332,9 @@ export const SignUp = () => {
             variant="contained"
             sx={{ backgroundColor: "#4285f4", color: "white " }}
             startIcon={<GoogleIcon />}
-            onClick={() => {
-              window.location.href = "https://user-information-project.herokuapp.com/auth/google"
-            }}
+            // onClick={() => {
+            //   window.location.href = "https://user-information-project.herokuapp.com/auth/google"
+            // }}
           >
             Continue With Google
           </Button>

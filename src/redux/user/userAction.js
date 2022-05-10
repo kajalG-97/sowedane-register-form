@@ -21,16 +21,16 @@ export const getUserDetails = (page, sort, filter) => (dispatch) => {
     axios.get(`https://user-information-project.herokuapp.com/admin?page=${page}&sortBy=age&OrderBy=${sort}&city=${filter}`).then(({ data }) => dispatch(userDetails(data)))
         .catch((err) => dispatch(userError()));
 
-} 
+}
 
-export const getOneUserDetail =(id)=> (dispatch) => {
+export const getOneUserDetail = (id) => (dispatch) => {
 
     dispatch(userLoding());
 
     axios.get(`https://user-information-project.herokuapp.com/users/${id}`).then(({ data }) => dispatch(userDetails(data)))
         .catch((err) => dispatch(userError()));
 
-} 
+}
 
 
 export const updateUserData = (data, id, toast, navigate) => (dispatch) => {

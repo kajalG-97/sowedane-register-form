@@ -3,7 +3,7 @@ import { LOGIN_ERROR, LOGIN_LODING, LOGIN_SUCCESS, LOGOUT } from "./authAction";
 const initialState = {
     isAuthenticated: false,
     token: "",
-    user: {},
+    user: sessionStorage.getItem("userAuthData") ||{},
     loding: false,
     error: false
 }

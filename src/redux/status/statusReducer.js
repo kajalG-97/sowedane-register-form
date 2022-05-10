@@ -1,8 +1,8 @@
 import {USER_STATUS,ADMIN_STATUS} from "./statusAction";
 
 const initialState = {
-    admin: false,
-    user : false
+    admin: sessionStorage.getItem("adminStatus") || false ,
+    user :sessionStorage.getItem("userStatus") || false
 }
 
 export const statusReducer = (store = initialState, { type, payload }) => {
