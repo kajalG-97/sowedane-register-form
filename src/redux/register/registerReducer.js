@@ -1,7 +1,7 @@
 import { REGISTER_ERROR, REGISTER_LODING, REGISTER_SUCCESS } from "./registerAction";
 
 const initialState = {
-    users:JSON.parse(sessionStorage.getItem("userRegData")) || {},
+    users: JSON.parse(sessionStorage.getItem("userRegData")) || {},
     loding: false,
     error: false
 }
@@ -11,7 +11,7 @@ export const registerReducer = (store = initialState, { type, payload }) => {
 
         case REGISTER_ERROR: return { ...store, loding: false, error: true };
 
-        case REGISTER_SUCCESS: return { ...store,loding: false, error: false, users: payload  }
+        case REGISTER_SUCCESS: return { ...store, loding: false, error: false, users: payload }
 
         default: return store;
     }

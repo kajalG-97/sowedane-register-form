@@ -12,12 +12,12 @@ export const registerError = () => ({ type: REGISTER_ERROR });
 
 export const registerSuccess = (payload) => ({ type: REGISTER_SUCCESS, payload });
 
-export const registerSuccessData = (data, toast,navigate) => (dispatch) => {
+export const registerSuccessData = (data, toast, navigate) => (dispatch) => {
 
     dispatch(registerLoding());
     axios.post("https://user-information-project.herokuapp.com/register", data).then(({ data }) => {
         dispatch(registerSuccess(data));
-        sessionStorage.setItem("userRegData",  JSON.stringify(data));
+        sessionStorage.setItem("userRegData", JSON.stringify(data));
 
         toast.success("Registration Successfull!", {
             position: "top-center",

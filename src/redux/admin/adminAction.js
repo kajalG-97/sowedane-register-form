@@ -19,31 +19,31 @@ export const logoutUser = () => ({ type: LOGOUT })
 
 export const adminloginSuccessData = (data, toast, navigate) => (dispatch) => {
     dispatch(aloginLoding());
-    
-   
 
-        axios.post("https://user-information-project.herokuapp.com/alogin", data).then(({ data }) => {
-            dispatch(aloginSuccess(data));
 
-            dispatch(adminStatus());
 
-            sessionStorage.setItem("adminAuthData",  JSON.stringify(data));
-            sessionStorage.setItem("adminStatus", true);
-            sessionStorage.setItem("adminAuthenticated", true);
+    axios.post("https://user-information-project.herokuapp.com/alogin", data).then(({ data }) => {
+        dispatch(aloginSuccess(data));
 
-            // console.log('data', data);
+        dispatch(adminStatus());
 
-            toast.success("Logged in Successfully", {
-                position: "top-center",
-            });
-            setTimeout(() => { navigate("/"); }, 3000)
-        }).catch((err) => {
-            // console.log('err', err.massage);
-            dispatch(aloginError())
-            toast.error("Please check your email or password", {
-                position: "top-center",
-            });
+        sessionStorage.setItem("adminAuthData", JSON.stringify(data));
+        sessionStorage.setItem("adminStatus", true);
+        sessionStorage.setItem("adminAuthenticated", true);
+
+        // console.log('data', data);
+
+        toast.success("Logged in Successfully", {
+            position: "top-center",
         });
-    }
+        setTimeout(() => { navigate("/"); }, 3000)
+    }).catch((err) => {
+        // console.log('err', err.massage);
+        dispatch(aloginError())
+        toast.error("Please check your email or password", {
+            position: "top-center",
+        });
+    });
+}
 
 

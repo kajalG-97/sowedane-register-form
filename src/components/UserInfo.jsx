@@ -31,7 +31,7 @@ export const UserInfo = () => {
     // const { isAdminAuthenticated } = useSelector((store) => store.admin);
 
 
-    const { users,loding,error } = useSelector((store) => store.user);
+    const { users, loding, error } = useSelector((store) => store.user);
     // console.log('users', users);
 
     // if (!isAuthenticated) {
@@ -141,9 +141,11 @@ export const UserInfo = () => {
                                 color: "#ffffff",
                                 bgcolor: "#ed3b58",
                             },
-                                    () => ({
-                                        "&:hover": {
-                                            color: "#fafafa", bgcolor: "#f36c82" } }),
+                            () => ({
+                                "&:hover": {
+                                    color: "#fafafa", bgcolor: "#f36c82"
+                                }
+                            }),
                         ]}
                         value="desc"
                         onClick={handleChangeSort}

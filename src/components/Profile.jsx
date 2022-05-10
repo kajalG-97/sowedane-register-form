@@ -20,9 +20,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getOneUserDetail, userError } from '../redux/user/userAction'
 
-import { useParams } from "react-router-dom";
 
-import { updateUserData } from "../redux/user/userAction"
 import { UserCard } from "./UserCard";
 
 export const Profile = () => {
@@ -90,7 +88,7 @@ export const Profile = () => {
                         }),
                     ]}
                     value="desc"
-                    onClick={()=> navigate("/editpage")}
+                    onClick={() => navigate("/editpage")}
                     variant="text"
                 >
                     Edit Profile

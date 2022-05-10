@@ -14,9 +14,6 @@ import TextField from "@mui/material/TextField";
 
 import Button from "@mui/material/Button";
 
-import GoogleIcon from "@mui/icons-material/Google";
-
-import FacebookIcon from "@mui/icons-material/Facebook";
 import axios from "axios";
 import { useState ,useEffect} from "react";
 
@@ -42,19 +39,13 @@ import FormControl from "@mui/material/FormControl";
 
 import Select from "@mui/material/Select";
 
-import { registerSuccessData } from "../redux/register/registerAction";
-
 import { getOneUserDetail,userError } from '../redux/user/userAction'
 
 import { useParams } from "react-router-dom";
 
 import { updateUserData } from "../redux/user/userAction"
 
-// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 export const EditInfo = () => {
 
@@ -63,10 +54,10 @@ export const EditInfo = () => {
     const dispatch = useDispatch();
 
     // const { id } = useParams();
-    // console.log('id', id);
+    
 
     const { user } = useSelector((store) => store.auth);
-    // console.log('user', user.user._id);
+  
 
     useEffect(() => {
         getData();
@@ -74,14 +65,9 @@ export const EditInfo = () => {
 
 
     const { users } = useSelector((store) => store.user);
-    // console.log('users', users);
-
-    // const data = users;
-    const [data, setData] = useState({});
   
-    // console.log('data', data);
-
-
+    const [data, setData] = useState({});
+ 
     const getData = () => {
 
         axios.get(`https://user-information-project.herokuapp.com/users/${user.user._id}`).then(({ data }) => setData(data))
@@ -89,12 +75,6 @@ export const EditInfo = () => {
         dispatch(getOneUserDetail(user.user._id));
 
     }
-
-
-    // const { loding, error } = useSelector((store) => store.register);
-
-
-   
 
     const getformData = (e) => {
 
@@ -104,11 +84,6 @@ export const EditInfo = () => {
 
     };
 
-
-
-    const [filter, setFilter] = useState("");
-
-    const [value, setValue] = useState(null);
 
 
     const handleRadio = (e) => {
@@ -128,9 +103,6 @@ export const EditInfo = () => {
         e.preventDefault();
        
         dispatch(updateUserData(data,user.user._id, toast, navigate));
-
-        // console.log('datsda', data);
-
         
     };
 
@@ -138,48 +110,7 @@ export const EditInfo = () => {
 
     const cityOption = ["Pune", "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Amritser", "Chennai", "Kolkata"];
 
-    const options = [
-        {
-            value: "Pune",
-            label: "Pune",
-            id: nanoid(),
-        },
-        {
-            value: "Mumbai",
-            label: "Mumbai",
-            id: nanoid(),
-        },
-        {
-            value: "Delhi",
-            label: "Delhi",
-            id: nanoid(),
-        },
-        {
-            value: "Bangalore",
-            label: "Bangalore",
-            id: nanoid(),
-        },
-        {
-            value: "Hyderabad",
-            label: "Hyderabad",
-            id: nanoid(),
-        },
-        {
-            value: "Amritser",
-            label: "Amritser",
-            id: nanoid(),
-        },
-        {
-            value: "Chennai",
-            label: "Chennai",
-            id: nanoid(),
-        },
-        {
-            value: "Kolkata",
-            label: "Kolkata",
-            id: nanoid(),
-        },
-    ];
+   
 
     const { firstName,
         lastName,
@@ -320,16 +251,7 @@ export const EditInfo = () => {
                             sx={{ marginBottom: "25px" }}
                             onChange={getformData}
                         />
-                        {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DatePicker
-                label="Basic example"
-                value={value}
-                onChange={(newValue) => {
-                  setValue(newValue);
-                }}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </LocalizationProvider> */}
+                      
                         <TextField
                             id="date_of_birth" type="Date"
                             // label="Date"

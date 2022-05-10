@@ -94,7 +94,7 @@ export const SignUp = () => {
   }
 
 
-  const handleChangeCityOption = (e) =>{
+  const handleChangeCityOption = (e) => {
     setData({ ...data, city: e.target.value });
   }
 
@@ -134,9 +134,9 @@ export const SignUp = () => {
 
     // } else {
     e.preventDefault();
-      dispatch(registerSuccessData(data, toast, navigate));
+    dispatch(registerSuccessData(data, toast, navigate));
 
-      // console.log('data', data);
+    // console.log('data', data);
 
     // }
   };
@@ -145,7 +145,7 @@ export const SignUp = () => {
 
   const cityOption = ["Pune", "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Amritser", "Chennai", "Kolkata"];
 
-  
+
 
   // return loding ? <img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" /> : error ? <img src="https://cdn.dribbble.com/users/2469324/screenshots/6538803/comp_3.gif" alt="Oops something went wrong" /> : (
   return (
@@ -202,15 +202,15 @@ export const SignUp = () => {
             sx={{ marginBottom: "25px" }}
             onChange={getformData}
           />
-          <Box sx={{ display: "flex", justifyContent: "space-between", m: "auto",mb:2, width: "100%" }}>
-            <Box sx={{ border: 0,ml:1 }} >
-              <FormLabel id="demo-row-radio-buttons-group-label" sx={{border:0,ml:-15}}>Gender</FormLabel>
+          <Box sx={{ display: "flex", justifyContent: "space-between", m: "auto", mb: 2, width: "100%" }}>
+            <Box sx={{ border: 0, ml: 1 }} >
+              <FormLabel id="demo-row-radio-buttons-group-label" sx={{ border: 0, ml: -15 }}>Gender</FormLabel>
               <RadioGroup row
                 aria-labelledby="demo-row-radio-buttons-group-label"
                 name="row-radio-buttons-group">
                 <FormControlLabel onChange={handleRadio} id="male" value="male" control={<Radio color="secondary" />} label="male" />
                 <FormControlLabel onChange={handleRadio} id="female" value="female" control={<Radio color="secondary" />} label="female" />
-                 </RadioGroup>
+              </RadioGroup>
             </Box>
             <Box>
               <FormControl variant="standard" sx={{ m: 1, minWidth: 170 }}>
@@ -228,12 +228,12 @@ export const SignUp = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                 
+
                   onChange={handleChangeCityOption}
                   label="City"
                   sx={{
-                    width: "100%",            
-                   
+                    width: "100%",
+
                     border: "1px solid #b1b1b1",
                     borderRadius: "5px",
                     marginBottom: "-6px",
@@ -241,13 +241,13 @@ export const SignUp = () => {
                     color: "#888888",
                   }}
                 >
-                  
+
                   {cityOption &&
                     cityOption.map((e) => {
                       return (
                         <MenuItem
                           key={e}
-                         
+
                           id={e}
                           value={e}
                         >
@@ -261,7 +261,7 @@ export const SignUp = () => {
             </Box>
           </Box>
 
-          <Box sx={{ display: "flex",gap:1, justifyContent: "space-between", m: "auto", width: "100%" }}>
+          <Box sx={{ display: "flex", gap: 1, justifyContent: "space-between", m: "auto", width: "100%" }}>
 
             <TextField
               id="mobile"
@@ -280,7 +280,7 @@ export const SignUp = () => {
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider> */}
-             <TextField
+            <TextField
               id="date_of_birth" type="Date"
               label="Date"
               variant="outlined"
@@ -326,15 +326,15 @@ export const SignUp = () => {
           >
             or
           </Typography>
-          
+
 
           <Button
             variant="contained"
             sx={{ backgroundColor: "#4285f4", color: "white " }}
             startIcon={<GoogleIcon />}
-            // onClick={() => {
-            //   window.location.href = "https://user-information-project.herokuapp.com/auth/google"
-            // }}
+          // onClick={() => {
+          //   window.location.href = "https://user-information-project.herokuapp.com/auth/google"
+          // }}
           >
             Continue With Google
           </Button>

@@ -3,9 +3,9 @@ import { aLOGIN_ERROR, aLOGIN_LODING, aLOGIN_SUCCESS, LOGOUT } from "./adminActi
 const ADMINDATA = JSON.parse(sessionStorage.getItem("adminAuthData"));
 
 const initialState = {
-    isAAuthenticated: sessionStorage.getItem("adminAuthenticated")|| false,
+    isAAuthenticated: sessionStorage.getItem("adminAuthenticated") || false,
     token: "",
-    admin: ADMINDATA || {} ,
+    admin: ADMINDATA || {},
     loding: false,
     error: false
 }
