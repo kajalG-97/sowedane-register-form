@@ -184,6 +184,16 @@ export const SignIn = () => {
                     >
                         <Link to="/SignUp">Create your account</Link>
                     </Typography>
+                    <Typography
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginTop: "15px",
+                            marginBottom: "10px",
+                        }}
+                    >
+                        <Link to="/adminSignIn">For Admin Login click here</Link>
+                    </Typography>
                 </Paper>
             </Box>
             <ToastContainer />
