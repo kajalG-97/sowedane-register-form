@@ -66,7 +66,7 @@ export const EditInfo = () => {
     // console.log('id', id);
 
     const { user } = useSelector((store) => store.auth);
-    console.log('user', user.user._id);
+    // console.log('user', user.user._id);
 
     useEffect(() => {
         getData();
@@ -74,12 +74,12 @@ export const EditInfo = () => {
 
 
     const { users } = useSelector((store) => store.user);
-    console.log('users', users);
+    // console.log('users', users);
 
     // const data = users;
     const [data, setData] = useState({});
   
-    console.log('data', data);
+    // console.log('data', data);
 
 
     const getData = () => {
@@ -129,7 +129,7 @@ export const EditInfo = () => {
        
         dispatch(updateUserData(data,user.user._id, toast, navigate));
 
-        console.log('datsda', data);
+        // console.log('datsda', data);
 
         
     };
@@ -187,9 +187,10 @@ export const EditInfo = () => {
     
         date_of_birth,
         gender,
+       
         mobile,
         city } = data;
-
+//  console.log('gender', gender);
     // return loding ? <img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" /> : error ? <img src="https://cdn.dribbble.com/users/2469324/screenshots/6538803/comp_3.gif" alt="Oops something went wrong" /> : (
     return (
         <>
@@ -251,10 +252,12 @@ export const EditInfo = () => {
                     <Box sx={{ display: "flex", justifyContent: "space-between", m: "auto", mb: 2, width: "100%" }}>
                         <Box sx={{ border: 0, ml: 1 }} >
                             <FormLabel id="demo-row-radio-buttons-group-label" sx={{ border: 0, ml: -15 }}>Gender</FormLabel>
+                            
+                            
                             <RadioGroup row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
-                                name="row-radio-buttons-group">
-                                <FormControlLabel onChange={handleRadio} id="male" value="male" control={<Radio color="secondary" />} label="male" />
+                                name="row-radio-buttons-group" defaultValue={gender}>
+                                <FormControlLabel onChange={handleRadio} id="male" value="male"  control={<Radio color="secondary" />} label="male" />
                                 <FormControlLabel onChange={handleRadio} id="female" value="female" control={<Radio color="secondary" />} label="female" />
                             </RadioGroup>
                         </Box>

@@ -27,14 +27,14 @@ export const adminloginSuccessData = (data, toast, navigate) => (dispatch) => {
 
             dispatch(adminStatus());
 
-            console.log('data', data);
+            // console.log('data', data);
 
             toast.success("Logged in Successfully", {
                 position: "top-center",
             });
-            setTimeout(() => { navigate("/mainHome"); }, 3000)
+            setTimeout(() => { navigate("/"); }, 3000)
         }).catch((err) => {
-            console.log('err', err.massage);
+            // console.log('err', err.massage);
             dispatch(aloginError())
             toast.error("Please check your email or password", {
                 position: "top-center",

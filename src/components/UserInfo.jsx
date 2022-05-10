@@ -26,17 +26,17 @@ export const UserInfo = () => {
     const dispatch = useDispatch();
 
 
-    const { isAuthenticated } = useSelector((store) => store.auth);
+    // const { isAuthenticated } = useSelector((store) => store.auth);
 
     // const { isAdminAuthenticated } = useSelector((store) => store.admin);
 
 
     const { users,loding,error } = useSelector((store) => store.user);
-    console.log('users', users);
+    // console.log('users', users);
 
-    if (!isAuthenticated) {
-        return <Navigate to="/signIn" />;
-    }
+    // if (!isAuthenticated) {
+    //     return <Navigate to="/signIn" />;
+    // }
 
     const size = users.totalPages;
 

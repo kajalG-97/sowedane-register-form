@@ -136,7 +136,7 @@ export const SignUp = () => {
     e.preventDefault();
       dispatch(registerSuccessData(data, toast, navigate));
 
-      console.log('data', data);
+      // console.log('data', data);
 
     // }
   };
@@ -271,7 +271,7 @@ export const SignUp = () => {
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  value={filter}
+                 
                   onChange={handleChangeCityOption}
                   label="City"
                   sx={{

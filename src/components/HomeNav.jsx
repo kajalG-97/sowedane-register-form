@@ -45,50 +45,46 @@ export const HomeNav = () => {
     const { isAuthenticated } = useSelector((store) => store.auth);
     const { user } = useSelector((store) => store.auth);
 
-    const sample= useSelector((store) => store.admin);
-    console.log('sample', sample);
-    
-   
+    const sample = useSelector((store) => store.admin);
+    // console.log('sample', sample);
+
+
     // if(user.admin && user.admin)
 
-    const admin = useSelector((store) => store.status);
-    console.log('admin', admin);
-   
+    const status = useSelector((store) => store.status);
 
-    
-
-    return   
-
-    //     <Box sx={{ flexGrow: 1 }}>
-    //         <AppBar position="static">
-    //             <Toolbar>
-    //                 <HomeIcon onClick={() => navigate("/")} sx={{ mr: 2 }} fontSize="large" />
-    //                 <Typography variant="h6" component="div" sx={{ mr: 2, flexGrow: 1, display: "flex", justifyContent: "space-between" }}>
-    //                     SOWEDANE
-    //                 </Typography>
-    //                 <Link to={"/SignIn"}>
-    //                     <Button sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit"> Login</Button>
-    //                 </Link>
-
-    //             </Toolbar>
-    //         </AppBar>
-    //     </Box>
-        // ) : 
-        (
+    return (
         <Box sx={{ flexGrow: 1 }}>
             <ThemeProvider theme={darkTheme}>
                 <AppBar position="static">
                     <Toolbar>
-                        <HomeIcon onClick={() => navigate("/mainHome")} sx={{ mr: 2 }} fontSize="large" />
+                        <HomeIcon onClick={() => navigate("/")} sx={{ mr: 2 }} fontSize="large" />
                         <Typography variant="h6" component="div" sx={{ mr: 2, flexGrow: 1, display: "flex", justifyContent: "space-between" }}>
                             SOWEDANE
                         </Typography>
 
-                            {!admin ? <Link to={"/userpage"}><Button sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit">User</Button></Link>
-                                : <Button onClick={(e) => navigate(`/editpage`)}
-                                    sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit" id>Hi!  {user.user && user.user.firstName} </Button>}
-                        <Link underline="none" to={"/"}><Button onClick={() => dispatch(logoutUser())} sx={{ m: 1, color: "#f2f2ff" }} color="inherit">Logout</Button></Link>
 
+
+                        {status.admin ? <Link to={"/userpage"}><Button sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit">User</Button></Link>
+                            : ""}
+                        {
+                            status.user ? <Button onClick={(e) => navigate(`/profile`)}
+                                sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit" id>Hi!  {user.user && user.user.firstName} </Button> : ""}
+
+
+
+
+                        {!isAuthenticated ?
+                            <Button onClick={() => navigate("/SignIn")} sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit">Login</Button>
+                            : <Button onClick={() => {
+                                dispatch(logoutUser())
+                                navigate("/")
+                            }} sx={{ m: 1, color: "#f2f2ff" }} color="inherit">Logout</Button>
+                        }
+
+                        {/* <Link to={!isAuthenticated?"/SignIn":"/"}>
+                            <Button  onClick={() => dispatch(logoutUser())} sx={{ m: 1, color: "#f2f2ff", textDecoration: "none" }} color="inherit">{!isAuthenticated? "Login":"Logout"}</Button></Link>
+                        </Link> : <Link underline="none" to={"/"}><Button  sx={{ m: 1, color: "#f2f2ff" }} color="inherit">Logout</Button></Link>} */}
                     </Toolbar>
                 </AppBar>
             </ThemeProvider>

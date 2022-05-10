@@ -42,7 +42,7 @@ export const updateUserData = (data, id, toast, navigate) => (dispatch) => {
         toast.success("User Details Updated!", {
             position: "top-center",
         });
-        setTimeout(() => { navigate("/mainHome"); }, 1000)
+        setTimeout(() => { navigate("/profile"); }, 1000)
     }).catch((err) => {
         dispatch(userError())
         toast.error("OOPS, Try again!", {

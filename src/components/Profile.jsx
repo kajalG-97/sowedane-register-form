@@ -49,6 +49,7 @@ import { getOneUserDetail, userError } from '../redux/user/userAction'
 import { useParams } from "react-router-dom";
 
 import { updateUserData } from "../redux/user/userAction"
+import { UserCard } from "./UserCard";
 
 export const Profile = () => {
     const navigate = useNavigate();
@@ -59,7 +60,7 @@ export const Profile = () => {
     // console.log('id', id);
 
     const { user } = useSelector((store) => store.auth);
-    console.log('user', user.user._id);
+    // console.log('user', user.user._id);
 
     useEffect(() => {
         getData();
@@ -67,12 +68,8 @@ export const Profile = () => {
 
 
     const { users } = useSelector((store) => store.user);
-    console.log('users', users);
+    // console.log('users', users);
 
-    // const data = users;
-    const [data, setData] = useState({});
-
-    console.log('data', data);
 
 
     const getData = () => {
@@ -85,7 +82,46 @@ export const Profile = () => {
 
     return (
         <>
-            
+            <Box
+                sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "space-around",
+                    gap: 7,
+
+                    width: "95%",
+                    m: 3,
+                    mt: "100px",
+                }}
+            >
+                <UserCard event={users} />
+
+
+            </Box>
+            <Box>
+
+
+                <Button
+                    sx={[
+                        {
+                            boxShadow: "0 1px 4px 0 rgba(40, 44, 63, 0.4)",
+                            m: 0,
+                            color: "#ffffff",
+                            bgcolor: "#ed3b58",
+                        },
+                        () => ({
+                            "&:hover": {
+                                color: "#fafafa", bgcolor: "#f36c82"
+                            }
+                        }),
+                    ]}
+                    value="desc"
+                    onClick={()=> navigate("/editpage")}
+                    variant="text"
+                >
+                    Edit Profile
+                </Button>
+            </Box>
         </>
     )
 }
