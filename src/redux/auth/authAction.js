@@ -32,15 +32,18 @@ export const loginSuccessData = (data,toast ,navigate ) => (dispatch) => {
     
     axios.post("https://user-information-project.herokuapp.com/login", data).then(({ data }) => {
         dispatch(loginSuccess(data));
+        console.log('data', data);
         
 
         dispatch(userStatus());
         
 
-        sessionStorage.setItem("userAuthData", data);
+        sessionStorage.setItem("userAuthData",  JSON.stringify(data));
+        console.log('datghja', data);
         
         sessionStorage.setItem("userStatus", true);
-        
+
+        sessionStorage.setItem("userAuthenticated", true);
 
         toast.success("Logged in Successfully", {
             position: "top-center",

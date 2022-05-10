@@ -42,7 +42,7 @@ export const Profile = () => {
 
 
     const { users } = useSelector((store) => store.user);
-    // console.log('users', users);
+    console.log('users', users);
 
 
 

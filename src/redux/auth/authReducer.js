@@ -1,9 +1,11 @@
 import { LOGIN_ERROR, LOGIN_LODING, LOGIN_SUCCESS, LOGOUT } from "./authAction";
 
+const USERDATA = JSON.parse(sessionStorage.getItem("userAuthData"));
+
 const initialState = {
-    isAuthenticated: false,
+    isAuthenticated: sessionStorage.getItem("userAuthenticated")||false,
     token: "",
-    user: sessionStorage.getItem("userAuthData") ||{},
+    user: USERDATA ||{},
     loding: false,
     error: false
 }

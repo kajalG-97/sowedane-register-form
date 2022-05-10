@@ -1,9 +1,11 @@
 import { aLOGIN_ERROR, aLOGIN_LODING, aLOGIN_SUCCESS, LOGOUT } from "./adminAction";
 
+const ADMINDATA = JSON.parse(sessionStorage.getItem("adminAuthData"));
+
 const initialState = {
-    isAuthenticated: false,
+    isAuthenticated: sessionStorage.getItem("adminAuthenticated")|| false,
     token: "",
-    admin: sessionStorage.getItem("adminAuthData") || {} ,
+    admin: ADMINDATA || {} ,
     loding: false,
     error: false
 }

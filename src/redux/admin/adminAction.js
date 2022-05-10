@@ -27,9 +27,9 @@ export const adminloginSuccessData = (data, toast, navigate) => (dispatch) => {
 
             dispatch(adminStatus());
 
-            sessionStorage.setItem("adminAuthData", data);
+            sessionStorage.setItem("adminAuthData",  JSON.stringify(data));
             sessionStorage.setItem("adminStatus", true);
-    
+            sessionStorage.setItem("adminAuthenticated", true);
 
             // console.log('data', data);
 

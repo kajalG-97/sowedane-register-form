@@ -17,7 +17,7 @@ export const registerSuccessData = (data, toast,navigate) => (dispatch) => {
     dispatch(registerLoding());
     axios.post("https://user-information-project.herokuapp.com/register", data).then(({ data }) => {
         dispatch(registerSuccess(data));
-        sessionStorage.setItem("userRegData", data);
+        sessionStorage.setItem("userRegData",  JSON.stringify(data));
 
         toast.success("Registration Successfull!", {
             position: "top-center",
